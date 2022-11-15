@@ -146,4 +146,4 @@ package-lock.json
 .idea
 .DS_Store
 .env
-/src/configs/database/database.json
+/src/config/database/database.json

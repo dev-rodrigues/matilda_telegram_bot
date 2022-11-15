@@ -1,5 +1,11 @@
 import 'reflect-metadata';
-import "../src/configs/database/index";
-import "../src/transporLayers/event/index";
+
+import './config/container/index';
+import "./config/database/index";
+
+import EventListener from "./entrypoint/event/EventListener";
+
+const eventListener = new EventListener();
+eventListener.listen().then(r => console.log("Listening for events..."));
 
 console.log("Bot has been started 🤖");
