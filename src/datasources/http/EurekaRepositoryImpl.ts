@@ -4,7 +4,8 @@ import axios from "axios";
 class EurekaRepositoryImpl implements EurekaRepository {
 
     async findServices(): Promise<Object[]> {
-        const result = await axios.get("http://146.164.65.231:8761/eureka/apps");
+        const endpoint = process.env.EUREKA_ENDPOINT as string
+        const result = await axios.get(endpoint);
         return result.data.applications.application
     }
 }
