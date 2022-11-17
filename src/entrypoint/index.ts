@@ -1,10 +1,12 @@
 import { Router } from 'express';
 import EventListener from "./event/EventListener";
-import CheckServices from "./cron/CheckServices";
+import CheckServicesDown from "./cron/CheckServicesDown";
+import CheckServicesTurnUp from "./cron/CheckServicesTurnUp";
 
 const routes = Router();
 
 EventListener.listen().then(r => console.log('Listening for events'));
-new CheckServices();
+new CheckServicesDown();
+new CheckServicesTurnUp();
 
 export default routes;
