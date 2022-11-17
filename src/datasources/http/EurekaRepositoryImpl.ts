@@ -7,7 +7,7 @@ axiosRetry(axios, {
     retries: 999,
     retryDelay: (retryCount) => {
         console.log(`retry attempt: ${retryCount}`)
-        return retryCount * 2000
+        return retryCount;
     },
     retryCondition: (err) => {
         return err.response?.status != 200;
