@@ -4,6 +4,11 @@ import database from "../../config/database";
 
 class UserRepositoryImpl implements UserRepository {
 
+    async findUsers(): Promise<User[]> {
+        const db = await database.read();
+        return db.users as User[]
+    }
+
     async createUser(user: User): Promise<User> {
         const db = await database.read();
         // @ts-ignore
